@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.MainController">
+    <children>
+        <BorderPane />
+        <!--        <MenuBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="1150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <menus>
+                        <Menu mnemonicParsing="false" onAction="#addTrip" text="Поездка">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Добавить поездку" />
+                            </items>
+                        </Menu>
+                    </menus>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Водитель">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#addDriver" text="Добавить профиля водителя" />
+                                <MenuItem mnemonicParsing="false" text="Редактировать профиль водителя" />
+                                <MenuItem mnemonicParsing="false" onAction="#removeDrivers" text="Удалить профиль водителя" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Покупка бензина">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#addFuel" text="Покупка бензина" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Покупка масла">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#addOil" text="Покупка масла" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>-->
+        <TabPane fx:id="upperTab" layoutX="8.0" layoutY="6.0" prefHeight="734.0" prefWidth="1136.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="6.0">
+            <tabs>
+                <Tab text="Поездки">
+                    <content>
+                        <AnchorPane fx:id="paneAllMoto" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <TabPane layoutX="169.0" layoutY="86.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="593.0" prefWidth="1003.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="169.0" AnchorPane.rightAnchor="-36.0" AnchorPane.topAnchor="86.0">
+                                    <tabs>
+                                        <Tab text="Поездки">
+                                            <content>
+                                                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="960.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="114.0">
+                                                    <children>
+                                                        <TableView fx:id="tableAllAuto" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="965.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="7.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="id" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="74.0" resizable="false" text="Номер" />
+                                                                <TableColumn fx:id="name" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="74.0" resizable="false" text="Мотоцикл" />
+                                                                <TableColumn fx:id="date" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="87.0" text="Дата" />
+                                                                <TableColumn fx:id="driver" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="79.0" text="Водитель" />
+                                                                <TableColumn fx:id="timeShiftBegin" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="131.0" text="Время начала смены" />
+                                                                <TableColumn fx:id="beginOdometr" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="83.0" text="Одометр" />
+                                                                <TableColumn fx:id="timeShiftFinish" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="132.0" text="Время конца смены" />
+                                                                <TableColumn fx:id="finishOdometr" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="83.0" text="Одометр" />
+                                                                <TableColumn fx:id="countFuel" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="Заправка (л)" />
+                                                                <TableColumn fx:id="fuelPerHundredKm" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="100.0" text="л/100км" />
+                                                            </columns>
+                                                        </TableView>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="График">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
+                                                    <children>
+                                                        <AreaChart fx:id="numberLineChart" layoutX="14.0" layoutY="14.0" prefHeight="590.0" prefWidth="838.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="118.0" AnchorPane.topAnchor="14.0">
+                                                            <xAxis>
+                                                                <CategoryAxis side="BOTTOM" />
+                                                            </xAxis>
+                                                            <yAxis>
+                                                                <NumberAxis side="LEFT" />
+                                                            </yAxis>
+                                                        </AreaChart>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                    <padding>
+                                        <Insets right="15.0" />
+                                    </padding>
+                                </TabPane>
+                                <ListView fx:id="motoListView" layoutX="8.0" layoutY="24.0" onMouseClicked="#setAllTripsToTable" prefHeight="659.0" prefWidth="152.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                <DatePicker fx:id="sinceDatePicker" layoutX="169.0" layoutY="47.0" />
+                                <DatePicker fx:id="tillDatePicker" layoutX="363.0" layoutY="47.0" />
+                                <Button layoutX="548.0" layoutY="47.0" mnemonicParsing="false" onAction="#getTripOnDate" text="Фильтровать" />
+                                <Label fx:id="labelUser" layoutX="169.0" layoutY="20.0" text="Добавлял:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                                <Button layoutX="671.0" layoutY="47.0" mnemonicParsing="false" onAction="#addTrip" prefHeight="25.0" prefWidth="242.0" text="Добавить поездку" />
+                                <!--      <Button layoutX="691.0" layoutY="47.0" mnemonicParsing="false" onAction="#dropFilter" text="Сброс" />-->
+                                <!--                  <Label layoutX="169.0" layoutY="40.0" text="Label"  fx:id="label"/>-->
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Водители">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <TableView fx:id="tableDrivers" layoutX="33.0" layoutY="23.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="211.0" AnchorPane.bottomAnchor="276.0" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="23.0">
+                                    <columns>
+                                        <TableColumn fx:id="surnameDriver" minWidth="0.0" prefWidth="90.0" text="Фамилия" />
+                                        <TableColumn fx:id="nameDriver" minWidth="0.0" prefWidth="120.0" text="Имя" />
+                                    </columns>
+                                </TableView>
+                                <!-- <Button layoutX="360.0" layoutY="487.0" mnemonicParsing="false" fx:id="#addUser" text="Button" />-->
+                                <TextField fx:id="surnameTextField" layoutX="33.0" layoutY="421.0" prefHeight="25.0" prefWidth="211.0" promptText="Фамилия" AnchorPane.bottomAnchor="233.0" />
+                                <TextField fx:id="nameTextField" layoutX="33.0" layoutY="477.0" prefHeight="25.0" prefWidth="211.0" promptText="Имя" AnchorPane.bottomAnchor="177.0" />
+                                <Button layoutX="33.0" layoutY="528.0" mnemonicParsing="false" onAction="#addDriver" prefHeight="25.0" prefWidth="212.0" text="Добавить" AnchorPane.bottomAnchor="126.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Склад">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <!--<TableView fx:id="tableStorage" layoutX="14.0" layoutY="14.0" prefHeight="54.0" prefWidth="452.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="670.0">
+                                    <columns>
+                                        <TableColumn fx:id="fuel_oil" prefWidth="199.0" text="Бензин+масло" />
+                                        <TableColumn fx:id="fuel" prefWidth="127.0" text="Бензин" />
+                                        <TableColumn fx:id="oil" prefWidth="125.0" text="Масло" />
+                                    </columns>
+                                </TableView>-->
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="42.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="42.0">
+                           <image>
+                              <Image url="@jerrycan_icon.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="inJerrycans_count" alignment="CENTER" layoutX="53.0" layoutY="513.0" prefHeight="32.0" prefWidth="133.0" text="" AnchorPane.leftAnchor="53.0">
+                           <font>
+                              <Font size="22.0" />
+                           </font></Label>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="493.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="493.0" AnchorPane.rightAnchor="493.0">
+                           <image>
+                              <Image url="@fuel_icon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="863.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="123.0">
+                           <image>
+                              <Image url="@oil_icon.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="oil_count" alignment="CENTER" layoutX="857.0" layoutY="513.0" prefHeight="32.0" prefWidth="162.0" AnchorPane.rightAnchor="117.0">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Line cacheHint="SCALE_AND_ROTATE" endX="100.0" layoutX="119.0" layoutY="386.0" rotate="90.0" startX="-100.0" AnchorPane.leftAnchor="18.5" />
+                        <Line cacheHint="SCALE_AND_ROTATE" endX="100.0" layoutX="550.0" layoutY="396.0" rotate="90.0" startX="-100.0" AnchorPane.leftAnchor="449.5" AnchorPane.rightAnchor="485.5" />
+                        <Line cacheHint="SCALE_AND_ROTATE" endX="100.0" layoutX="939.0" layoutY="386.0" rotate="90.0" startX="-100.0" AnchorPane.rightAnchor="96.5" />
+                        <Label fx:id="fuel_count" alignment="CENTER" layoutX="471.0" layoutY="513.0" prefHeight="28.0" prefWidth="159.0" AnchorPane.leftAnchor="471.0">
+                           <font>
+                              <Font size="22.0" />
+                           </font></Label>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Покупка бензина">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <TableView fx:id="tableAllBuyingFuel" layoutX="23.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="619.0" prefWidth="570.0" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="47.0">
+                                    <columns>
+                                        <TableColumn fx:id="dateByuingFuel" minWidth="0.0" prefWidth="90.0" text="Дата" />
+                                        <TableColumn fx:id="driverByuingFuel" minWidth="0.0" prefWidth="120.0" text="Фамилия" />
+                                        <TableColumn fx:id="timeByuingFuel" minWidth="0.0" prefWidth="120.0" text="Время" />
+                                        <TableColumn fx:id="countFuelByuingFuel" minWidth="0.0" prefWidth="120.0" text="Кол-во (л)" />
+                                        <TableColumn fx:id="priceFuelByuingFuel" minWidth="0.0" prefWidth="120.0" text="Цена за (л)" />
+                                    </columns>
+                                </TableView>
+                                <ComboBox fx:id="chooseDriverComboBox" layoutX="649.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="227.0" promptText="Выберете водителя" AnchorPane.leftAnchor="649.0" GridPane.columnIndex="1" />
+                                <TextField fx:id="priceTextField" layoutX="650.0" layoutY="143.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="227.0" promptText="Цена за литр" AnchorPane.leftAnchor="650.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <TextField fx:id="countTextField" layoutX="649.0" layoutY="97.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="227.0" promptText="Кол-во бензина" AnchorPane.leftAnchor="649.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                                      <Button layoutX="649.0" layoutY="212.0" mnemonicParsing="false" onAction="#addFuel" prefHeight="25.0" prefWidth="228.0" text="Добавить" AnchorPane.leftAnchor="649.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Покупка масла">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <TableView fx:id="tableAllBuyingOil" layoutX="23.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="619.0" prefWidth="452.0" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="47.0">
+                                    <columns>
+                                        <TableColumn fx:id="dateByuingOil" minWidth="0.0" prefWidth="90.0" text="Дата" />
+                                        <TableColumn fx:id="timeByuingOil" minWidth="0.0" prefWidth="120.0" text="Время" />
+                                        <TableColumn fx:id="countFuelByuingOil" minWidth="0.0" prefWidth="120.0" text="Кол-во (л)" />
+                                        <TableColumn fx:id="priceFuelByuingOil" minWidth="0.0" prefWidth="120.0" text="Цена за (л)" />
+                                    </columns>
+                                </TableView>
+                                <TextField fx:id="countOilTextField" layoutX="520.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="227.0" promptText="Кол-во масла" AnchorPane.leftAnchor="520.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <TextField fx:id="priceOilTextField" layoutX="519.0" layoutY="95.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="228.0" promptText="Цена за литр" AnchorPane.leftAnchor="519.0" GridPane.columnIndex="1" />
+
+                                      <Button layoutX="519.0" layoutY="153.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addOil" prefHeight="25.0" prefWidth="228.0" text="Добавить" AnchorPane.leftAnchor="519.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+
+                <Tab text="Пользователи">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <TableView fx:id="tableUser" layoutX="33.0" layoutY="23.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="211.0" AnchorPane.bottomAnchor="276.0" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="23.0">
+                                    <columns>
+                                        <TableColumn fx:id="loginUser" minWidth="0.0" prefWidth="210.0" text="Логин" />
+                                    </columns>
+                                </TableView>
+                                <!-- <Button layoutX="360.0" layoutY="487.0" mnemonicParsing="false" fx:id="#addUser" text="Button" />-->
+                                <TextField fx:id="login" layoutX="33.0" layoutY="421.0" prefHeight="25.0" prefWidth="211.0" promptText="Логин" AnchorPane.bottomAnchor="233.0" />
+                                <TextField fx:id="password" layoutX="33.0" layoutY="477.0" prefHeight="25.0" prefWidth="211.0" promptText="Пароль" AnchorPane.bottomAnchor="177.0" />
+                                <Button layoutX="33.0" layoutY="528.0" mnemonicParsing="false" onAction="#addUser" prefHeight="25.0" prefWidth="212.0" text="Добавить" AnchorPane.bottomAnchor="126.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

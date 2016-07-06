@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="403.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.AddTripForm">
+   <children>
+      <GridPane layoutX="43.0" layoutY="26.0" prefHeight="318.0" prefWidth="317.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ComboBox fx:id="motoObj" prefHeight="25.0" prefWidth="158.0" GridPane.columnIndex="1" />
+             <ComboBox fx:id="driver" prefHeight="25.0" prefWidth="158.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="beginOdometr" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="finishOdometr" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="countFuel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         <!--   <Label text="Дата" GridPane.rowIndex="2" />-->
+            <Label text="Выберете мотоцикл" />
+             <Label text="Выберете водителя" GridPane.rowIndex="1" />
+            <Label text="Одометр на начало смены" GridPane.rowIndex="3" />
+            <Label text="Одометр на конец смены" GridPane.rowIndex="4" />
+<!--            <DatePicker fx:id="date" GridPane.columnIndex="1" GridPane.rowIndex="2" />-->
+            <Label text="Кол-во бензина" GridPane.rowIndex="5" />
+            <Label text="Время на начало смены" GridPane.rowIndex="2" />
+<!--            <Label text="Время на конец смены" GridPane.rowIndex="5" />-->
+            <TextField fx:id="timeBegin" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+<!--            <TextField fx:id="timeFinish" GridPane.columnIndex="1" GridPane.rowIndex="5" />-->
+         </children>
+      </GridPane>
+      <Button layoutX="144.0" layoutY="344.0" mnemonicParsing="false" onAction="#addTrip" text="Добавить поездку" />
+   </children>
+</AnchorPane>

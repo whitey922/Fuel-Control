@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="fuel_control" uuid="1f35abfe-0af6-43dd-a22f-467eeaff8e6f">
+    <database-info product="SQLite" version="3.8.11" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="drivers" schema="" catalog="" type="TABLE">
+      <column name="surname" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="fuel" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="time" sqlType="TIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="count" sqlType="DOUBLE" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="price" sqlType="DOUBLE" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="driver" sqlType="VARCHAR(25)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="moto" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(25)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="oil" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="time" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="date" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="count" sqlType="DOUBLE" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="price" sqlType="DOUBLE" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
+      <column name="name" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="seq" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="storage" schema="" catalog="" type="TABLE">
+      <column name="mixed" sqlType="DOUBLE" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="fuel" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="oil" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+    </table>
+    <table name="trips" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="moto" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="driver" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="fuel" sqlType="REAL" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="date" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="odometr_begin" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="time_start" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="odometr_finish" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="time_finish" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="login" sqlType="VARCHAR(25)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_trips_1" columns="login" ref-table="users" ref-schema="" ref-catalog="" ref-columns="login" update-rule="0" delete-rule="0" deferrability="1"/>
+      <foreign-key name="#FAKE_trips_2" columns="moto" ref-table="moto" ref-schema="" ref-catalog="" ref-columns="name" update-rule="0" delete-rule="0" deferrability="1"/>
+      <foreign-key name="#FAKE_trips_3" columns="driver" ref-table="drivers" ref-schema="" ref-catalog="" ref-columns="surname" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="users" schema="" catalog="" type="TABLE">
+      <column name="login" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+    </table>
+  </data-source>
+</component>

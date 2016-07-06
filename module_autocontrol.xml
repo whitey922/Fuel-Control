@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_autocontrol" default="compile.module.autocontrol">
+  <dirname property="module.autocontrol.basedir" file="${ant.file.module_autocontrol}"/>
+  
+  <property name="module.jdk.home.autocontrol" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.autocontrol" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.autocontrol" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.autocontrol" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="autocontrol.output.dir" value="${module.autocontrol.basedir}/out/production/AutoControl"/>
+  <property name="autocontrol.testoutput.dir" value="${module.autocontrol.basedir}/out/test/AutoControl"/>
+  
+  <path id="autocontrol.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="autocontrol.module.production.classpath">
+    <path refid="${module.jdk.classpath.autocontrol}"/>
+  </path>
+  
+  <path id="autocontrol.runtime.production.module.classpath">
+    <pathelement location="${autocontrol.output.dir}"/>
+  </path>
+  
+  <path id="autocontrol.module.classpath">
+    <path refid="${module.jdk.classpath.autocontrol}"/>
+    <pathelement location="${autocontrol.output.dir}"/>
+  </path>
+  
+  <path id="autocontrol.runtime.module.classpath">
+    <pathelement location="${autocontrol.testoutput.dir}"/>
+    <pathelement location="${autocontrol.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.autocontrol">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.autocontrol">
+    <patternset refid="excluded.from.module.autocontrol"/>
+  </patternset>
+  
+  <path id="autocontrol.module.sourcepath">
+    <dirset dir="${module.autocontrol.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.autocontrol" depends="compile.module.autocontrol.production,compile.module.autocontrol.tests" description="Compile module AutoControl"/>
+  
+  <target name="compile.module.autocontrol.production" depends="register.custom.compilers" description="Compile module AutoControl; production classes">
+    <mkdir dir="${autocontrol.output.dir}"/>
+    <javac2 destdir="${autocontrol.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.autocontrol}/javac">
+      <compilerarg line="${compiler.args.autocontrol}"/>
+      <bootclasspath refid="autocontrol.module.bootclasspath"/>
+      <classpath refid="autocontrol.module.production.classpath"/>
+      <src refid="autocontrol.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.autocontrol"/>
+    </javac2>
+    
+    <copy todir="${autocontrol.output.dir}">
+      <fileset dir="${module.autocontrol.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.autocontrol.tests" depends="register.custom.compilers,compile.module.autocontrol.production" description="compile module AutoControl; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.autocontrol" description="cleanup module">
+    <delete dir="${autocontrol.output.dir}"/>
+    <delete dir="${autocontrol.testoutput.dir}"/>
+  </target>
+</project>
